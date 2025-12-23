@@ -146,10 +146,7 @@ function saveBlackjackToCloud() {
         },
         twoHandsMode: typeof twoHandsMode !== 'undefined' ? twoHandsMode : false,
         hand2Bet: typeof hand2Bet !== 'undefined' ? hand2Bet : 0,
-        leaderboard: typeof leaderboard !== 'undefined' ? leaderboard : [],
-        multiPlayerMode: typeof multiPlayerMode !== 'undefined' ? multiPlayerMode : false,
-        players: typeof players !== 'undefined' ? players : [],
-        activePlayerIndex: typeof activePlayerIndex !== 'undefined' ? activePlayerIndex : 0
+        leaderboard: typeof leaderboard !== 'undefined' ? leaderboard : []
     };
     
     // Debounce saves
@@ -180,9 +177,6 @@ async function loadBlackjackFromCloud() {
         if (typeof twoHandsMode !== 'undefined') twoHandsMode = data.twoHandsMode || false;
         if (typeof hand2Bet !== 'undefined') hand2Bet = data.hand2Bet || 0;
         if (typeof leaderboard !== 'undefined') leaderboard = data.leaderboard || [];
-        if (typeof multiPlayerMode !== 'undefined') multiPlayerMode = data.multiPlayerMode || false;
-        if (typeof players !== 'undefined') players = data.players || [];
-        if (typeof activePlayerIndex !== 'undefined') activePlayerIndex = data.activePlayerIndex || 0;
         return true;
     }
     return false;

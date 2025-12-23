@@ -3,6 +3,12 @@
 ## Overview
 This guide will help you build and publish the Chip Simulator app to both the Apple App Store (iOS) and Google Play Store (Android).
 
+## Monorepo Layout
+- Web PWA assets that feed Capacitor or any wrapper live in `apps/web/`.
+- Native iOS project lives in `apps/ios/ChipSim/`.
+- Android project slot is `apps/android/` (add your native or cross-platform project here).
+Update any paths/commands in this guide to point at the monorepo locations.
+
 ---
 
 ## Prerequisites
