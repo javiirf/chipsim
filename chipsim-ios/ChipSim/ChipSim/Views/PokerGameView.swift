@@ -16,8 +16,8 @@ struct PokerGameView: View {
         GeometryReader { geometry in
             let isSmallScreen = geometry.size.height < 400
             let statusHeight: CGFloat = isSmallScreen ? 35 : 45
-            let boardHeight: CGFloat = isSmallScreen ? geometry.size.height * 0.35 : geometry.size.height * 0.40
-            let playerHeight: CGFloat = isSmallScreen ? geometry.size.height * 0.18 : geometry.size.height * 0.20
+            let boardHeight: CGFloat = isSmallScreen ? geometry.size.height * 0.50 : geometry.size.height * 0.55
+            let playerHeight: CGFloat = isSmallScreen ? geometry.size.height * 0.08 : geometry.size.height * 0.10
             let controlsHeight: CGFloat = geometry.size.height * 0.4
             
             VStack(spacing: isSmallScreen ? 2 : 4) {
@@ -99,14 +99,14 @@ struct PokerGameView: View {
                 }
                 
                 // Top Section: Board and Pot
-                HStack(spacing: isSmallScreen ? 6 : 8) {
+                HStack(spacing: isSmallScreen ? 8 : 10) {
                     // Community Board
-                    VStack(spacing: isSmallScreen ? 6 : 8) {
+                    VStack(spacing: isSmallScreen ? 8 : 12) {
                         Text("BOARD")
-                            .font(.system(size: isSmallScreen ? 12 : 16, weight: .semibold))
+                            .font(.system(size: isSmallScreen ? 16 : 20, weight: .semibold))
                             .foregroundColor(.white)
                         
-                        HStack(spacing: isSmallScreen ? 6 : 8) {
+                        HStack(spacing: isSmallScreen ? 8 : 12) {
                             ForEach(0..<5) { index in
                                 CardSlotView(
                                     isDealt: getCardSlotDealt(index: index),
@@ -115,28 +115,28 @@ struct PokerGameView: View {
                             }
                         }
                     }
-                    .padding(isSmallScreen ? 8 : 12)
+                    .padding(isSmallScreen ? 12 : 16)
                     .frame(maxWidth: .infinity)
                     .frame(height: boardHeight)
                     .background(AppColors.cardBackground)
-                    .cornerRadius(8)
+                    .cornerRadius(10)
                     
                     // Pot Display
-                    VStack(spacing: isSmallScreen ? 6 : 8) {
+                    VStack(spacing: isSmallScreen ? 8 : 10) {
                         Text("POT")
-                            .font(.system(size: isSmallScreen ? 12 : 14))
+                            .font(.system(size: isSmallScreen ? 14 : 16))
                             .foregroundColor(.gray)
                         Text("$\(game.pot + game.players.reduce(0) { $0 + $1.bet })")
-                            .font(.system(size: isSmallScreen ? 22 : 28, weight: .bold))
+                            .font(.system(size: isSmallScreen ? 26 : 32, weight: .bold))
                             .foregroundColor(AppColors.gold)
                             .lineLimit(1)
                             .minimumScaleFactor(0.7)
                     }
-                    .padding(isSmallScreen ? 8 : 12)
-                    .frame(width: geometry.size.width * (isSmallScreen ? 0.24 : 0.28))
+                    .padding(isSmallScreen ? 12 : 16)
+                    .frame(width: geometry.size.width * (isSmallScreen ? 0.26 : 0.30))
                     .frame(height: boardHeight)
                     .background(AppColors.cardBackground)
-                    .cornerRadius(8)
+                    .cornerRadius(10)
                 }
                 
                 // Active Player Card
@@ -275,21 +275,21 @@ struct CardSlotView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: isSmallScreen ? 6 : 8)
+            RoundedRectangle(cornerRadius: isSmallScreen ? 8 : 10)
                 .fill(isDealt ? Color.blue.opacity(0.3) : Color.gray.opacity(0.2))
-                .frame(width: isSmallScreen ? 45 : 60, height: isSmallScreen ? 65 : 85)
+                .frame(width: isSmallScreen ? 60 : 80, height: isSmallScreen ? 85 : 115)
                 .overlay(
-                    RoundedRectangle(cornerRadius: isSmallScreen ? 6 : 8)
-                        .stroke(AppColors.gold.opacity(0.3), lineWidth: isSmallScreen ? 2 : 3)
+                    RoundedRectangle(cornerRadius: isSmallScreen ? 8 : 10)
+                        .stroke(AppColors.gold.opacity(0.3), lineWidth: isSmallScreen ? 3 : 4)
                 )
             
             if isDealt {
                 Text("CARD")
-                    .font(.system(size: isSmallScreen ? 11 : 14, weight: .bold))
+                    .font(.system(size: isSmallScreen ? 14 : 18, weight: .bold))
                     .foregroundColor(.white)
             } else {
                 Text("?")
-                    .font(.system(size: isSmallScreen ? 16 : 20))
+                    .font(.system(size: isSmallScreen ? 20 : 26))
                     .foregroundColor(.white)
             }
         }
@@ -453,12 +453,12 @@ struct BettingControlsView: View {
             if player.bankroll > toCall {
                 let raises = game.getValidRaises()
                 if !raises.isEmpty {
-                    VStack(alignment: .leading, spacing: isSmallScreen ? 2 : 4) {
+                    VStack(alignment: .leading, spacing: isSmallScreen ? 4 : 6) {
                         Text("RAISE TO")
-                            .font(.system(size: isSmallScreen ? 10 : 12))
+                            .font(.system(size: isSmallScreen ? 12 : 16))
                             .foregroundColor(.gray)
                         
-                        HStack(spacing: isSmallScreen ? 3 : 4) {
+                        HStack(spacing: isSmallScreen ? 4 : 6) {
                             ForEach(Array(raises.prefix(6).enumerated()), id: \.offset) { index, raise in
                                 Button(action: {
                                     game.raise(to: raise.amount)
@@ -469,22 +469,22 @@ struct BettingControlsView: View {
                                                 .fill(getChipGradient(raise.chipColor))
                                                 .overlay(
                                                     Circle()
-                                                        .stroke(getChipBorderColor(raise.chipColor), lineWidth: isSmallScreen ? 1 : 1.5)
+                                                        .stroke(getChipBorderColor(raise.chipColor), lineWidth: isSmallScreen ? 2 : 3)
                                                 )
                                                 .overlay(
                                                     Circle()
-                                                        .stroke(Color.white.opacity(0.2), lineWidth: 0.5)
+                                                        .stroke(Color.white.opacity(0.2), lineWidth: 1)
                                                         .frame(width: chipGeometry.size.width * 0.7, height: chipGeometry.size.height * 0.7)
                                                 )
-                                                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+                                                .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
                                             
-                                            VStack(spacing: isSmallScreen ? 1 : 2) {
+                                            VStack(spacing: isSmallScreen ? 2 : 3) {
                                                 Text(raise.label)
-                                                    .font(.system(size: isSmallScreen ? 10 : 12, weight: .bold))
+                                                    .font(.system(size: isSmallScreen ? 14 : 18, weight: .bold))
                                                     .lineLimit(1)
                                                     .minimumScaleFactor(0.7)
                                                 Text("$\(raise.amount)")
-                                                    .font(.system(size: isSmallScreen ? 11 : 14, weight: .bold))
+                                                    .font(.system(size: isSmallScreen ? 16 : 20, weight: .bold))
                                                     .lineLimit(1)
                                                     .minimumScaleFactor(0.7)
                                             }
@@ -492,6 +492,7 @@ struct BettingControlsView: View {
                                         }
                                     }
                                     .aspectRatio(1, contentMode: .fit)
+                                    .frame(minHeight: isSmallScreen ? 60 : 80)
                                 }
                                 .frame(maxWidth: .infinity)
                             }
