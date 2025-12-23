@@ -16,7 +16,7 @@ struct PokerGameView: View {
         GeometryReader { geometry in
             let isSmallScreen = geometry.size.height < 400
             let statusHeight: CGFloat = isSmallScreen ? 35 : 45
-            let boardHeight: CGFloat = isSmallScreen ? geometry.size.height * 0.50 : geometry.size.height * 0.55
+            let boardHeight: CGFloat = isSmallScreen ? geometry.size.height * 0.45 : geometry.size.height * 0.50
             let playerHeight: CGFloat = isSmallScreen ? geometry.size.height * 0.08 : geometry.size.height * 0.10
             let controlsHeight: CGFloat = geometry.size.height * 0.4
             
