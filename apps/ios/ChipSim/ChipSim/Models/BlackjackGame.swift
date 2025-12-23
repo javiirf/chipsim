@@ -180,7 +180,6 @@ class BlackjackGame: ObservableObject {
         hand2Complete = false
         betConfirmed = false
         isDealing = false
-        dealerPhase = false
         
         // Reset split hands
         splitBet = 0
