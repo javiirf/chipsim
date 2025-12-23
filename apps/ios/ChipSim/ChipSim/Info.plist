@@ -6,5 +6,32 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false></false>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>googleapis.com</key>
+			<dict>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false></false>
+				<key>NSIncludesSubdomains</key>
+				<true></true>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<false></false>
+			</dict>
+			<key>firebaseio.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true></true>
+			</dict>
+			<key>firebasedatabase.app</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true></true>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -36,25 +36,34 @@ class FirebaseService: ObservableObject {
     func initialize() {
         #if canImport(FirebaseCore)
         // Check if Firebase is already configured
-        if FirebaseApp.app() == nil {
-            // Firebase should be configured in AppDelegate or App file
-            // For now, we'll assume it's configured
+        guard FirebaseApp.app() != nil else {
             print("Firebase not configured - ensure FirebaseApp.configure() is called")
             return
         }
         
-        // Monitor connection status
+        // Monitor connection status with error handling
+        #if canImport(FirebaseDatabase)
         connectedRef = Database.database().reference(withPath: ".info/connected")
         connectedRef?.observe(.value) { [weak self] snapshot in
-            self?.isConnected = snapshot.value as? Bool ?? false
+            DispatchQueue.main.async {
+                self?.isConnected = snapshot.value as? Bool ?? false
+                if !(self?.isConnected ?? false) {
+                    print("Firebase Database disconnected")
+                }
+            }
         }
+        #endif
         
         // Check auth state
         _ = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             if let user = user {
                 self?.currentUser = user
+                #if canImport(FirebaseDatabase)
                 self?.userDataRef = Database.database().reference(withPath: "users/\(user.uid)")
-                self?.isReady = true
+                #endif
+                DispatchQueue.main.async {
+                    self?.isReady = true
+                }
             } else {
                 // Sign in anonymously
                 self?.signInAnonymously()
@@ -66,16 +75,33 @@ class FirebaseService: ObservableObject {
         #endif
     }
     
-    private func signInAnonymously() {
+    private func signInAnonymously(retryCount: Int = 0) {
         #if canImport(FirebaseAuth) && canImport(FirebaseDatabase)
         Auth.auth().signInAnonymously { [weak self] result, error in
             if let error = error {
-                print("Anonymous auth failed: \(error)")
-                self?.isReady = false
+                let nsError = error as NSError
+                print("Anonymous auth failed (attempt \(retryCount + 1)): \(error)")
+                
+                // Retry on network errors (max 3 attempts, with exponential backoff)
+                if nsError.domain == "FIRAuthErrorDomain" && nsError.code == 17020 && retryCount < 3 {
+                    let delay = Double(retryCount + 1) * 2.0 // 2s, 4s, 6s
+                    print("Retrying anonymous auth in \(delay) seconds...")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                        self?.signInAnonymously(retryCount: retryCount + 1)
+                    }
+                } else {
+                    print("Anonymous auth failed permanently - app will work in offline mode")
+                    DispatchQueue.main.async {
+                        self?.isReady = false
+                    }
+                }
             } else if let user = result?.user {
+                print("Anonymous auth successful: \(user.uid)")
                 self?.currentUser = user
                 self?.userDataRef = Database.database().reference(withPath: "users/\(user.uid)")
-                self?.isReady = true
+                DispatchQueue.main.async {
+                    self?.isReady = true
+                }
             }
         }
         #endif
