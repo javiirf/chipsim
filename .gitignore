@@ -2,9 +2,9 @@
 node_modules/
 .npm
 
-# Capacitor native builds
-android/
-ios/
+# Capacitor native builds (not our apps/ios folder)
+/android/
+/ios/
 
 # Firebase
 .firebase/

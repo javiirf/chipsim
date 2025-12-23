@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		805B21872EFA14020069C5DF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 805B21862EFA14020069C5DF /* FirebaseAuth */; };
+		805B21892EFA14020069C5DF /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 805B21882EFA14020069C5DF /* FirebaseCore */; };
+		805B218B2EFA14020069C5DF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 805B218A2EFA14020069C5DF /* FirebaseDatabase */; };
+		AA000001AAAA0001AAAA0001 /* ChipSimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA0002AAAA0002 /* ChipSimApp.swift */; };
+		AA000003AAAA0003AAAA0003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA0004AAAA0004 /* Assets.xcassets */; };
+		AA000005AAAA0005AAAA0005 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA000006AAAA0006AAAA0006 /* GoogleService-Info.plist */; };
+		AA000007AAAA0007AAAA0007 /* BlackjackGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000008AAAA0008AAAA0008 /* BlackjackGame.swift */; };
+		AA000009AAAA0009AAAA0009 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000AAAAA000AAAAA000A /* Player.swift */; };
+		AA00000BAAAA000BAAAA000B /* PokerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000CAAAA000CAAAA000C /* PokerGame.swift */; };
+		AA00000DAAAA000DAAAA000D /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000EAAAA000EAAAA000E /* Statistics.swift */; };
+		AA00000FAAAA000FAAAA000F /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000010AAAA0010AAAA0010 /* AudioService.swift */; };
+		AA000011AAAA0011AAAA0011 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000012AAAA0012AAAA0012 /* FirebaseService.swift */; };
+		AA000013AAAA0013AAAA0013 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000014AAAA0014AAAA0014 /* StorageService.swift */; };
+		AA000015AAAA0015AAAA0015 /* BlackjackComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000016AAAA0016AAAA0016 /* BlackjackComponents.swift */; };
+		AA000017AAAA0017AAAA0017 /* BlackjackGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000018AAAA0018AAAA0018 /* BlackjackGameView.swift */; };
+		AA000019AAAA0019AAAA0019 /* BlackjackSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001AAAAA001AAAAA001A /* BlackjackSetupView.swift */; };
+		AA00001BAAAA001BAAAA001B /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001CAAAA001CAAAA001C /* ColorScheme.swift */; };
+		AA00001DAAAA001DAAAA001D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001EAAAA001EAAAA001E /* HomeView.swift */; };
+		AA00001FAAAA001FAAAA001F /* PokerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000020AAAA0020AAAA0020 /* PokerComponents.swift */; };
+		AA000021AAAA0021AAAA0021 /* PokerGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000022AAAA0022AAAA0022 /* PokerGameView.swift */; };
+		AA000023AAAA0023AAAA0023 /* PokerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000024AAAA0024AAAA0024 /* PokerSetupView.swift */; };
+		AA000025AAAA0025AAAA0025 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000026AAAA0026AAAA0026 /* SettingsView.swift */; };
+		AA000027AAAA0027AAAA0027 /* SpacingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000028AAAA0028AAAA0028 /* SpacingConstants.swift */; };
+		AA000029AAAA0029AAAA0029 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00002AAAAA002AAAAA002A /* StatisticsView.swift */; };
+		AA00002BAAAA002BAAAA002B /* ChipSimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00002CAAAA002CAAAA002C /* ChipSimTests.swift */; };
+		AA00002DAAAA002DAAAA002D /* ChipSimUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00002EAAAA002EAAAA002E /* ChipSimUITests.swift */; };
+		AA00002FAAAA002FAAAA002F /* ChipSimUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000030AAAA0030AAAA0030 /* ChipSimUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8051C8A32EFA0E3900D96C56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C8892EFA0E3300D96C56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8051C8902EFA0E3300D96C56;
+			remoteInfo = ChipSim;
+		};
+		8051C8AD2EFA0E3900D96C56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C8892EFA0E3300D96C56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8051C8902EFA0E3300D96C56;
+			remoteInfo = ChipSim;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8051C8912EFA0E3300D96C56 /* ChipSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChipSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8051C8A22EFA0E3900D96C56 /* ChipSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChipSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8051C8AC2EFA0E3900D96C56 /* ChipSimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChipSimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA000002AAAA0002AAAA0002 /* ChipSimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipSimApp.swift; sourceTree = "<group>"; };
+		AA000004AAAA0004AAAA0004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA000006AAAA0006AAAA0006 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA000031AAAA0031AAAA0031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA000032AAAA0032AAAA0032 /* ChipSim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChipSim.entitlements; sourceTree = "<group>"; };
+		AA000008AAAA0008AAAA0008 /* BlackjackGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackGame.swift; sourceTree = "<group>"; };
+		AA00000AAAAA000AAAAA000A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		AA00000CAAAA000CAAAA000C /* PokerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerGame.swift; sourceTree = "<group>"; };
+		AA00000EAAAA000EAAAA000E /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		AA000010AAAA0010AAAA0010 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		AA000012AAAA0012AAAA0012 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		AA000014AAAA0014AAAA0014 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		AA000016AAAA0016AAAA0016 /* BlackjackComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackComponents.swift; sourceTree = "<group>"; };
+		AA000018AAAA0018AAAA0018 /* BlackjackGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackGameView.swift; sourceTree = "<group>"; };
+		AA00001AAAAA001AAAAA001A /* BlackjackSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackSetupView.swift; sourceTree = "<group>"; };
+		AA00001CAAAA001CAAAA001C /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		AA00001EAAAA001EAAAA001E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AA000020AAAA0020AAAA0020 /* PokerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerComponents.swift; sourceTree = "<group>"; };
+		AA000022AAAA0022AAAA0022 /* PokerGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerGameView.swift; sourceTree = "<group>"; };
+		AA000024AAAA0024AAAA0024 /* PokerSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerSetupView.swift; sourceTree = "<group>"; };
+		AA000026AAAA0026AAAA0026 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA000028AAAA0028AAAA0028 /* SpacingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingConstants.swift; sourceTree = "<group>"; };
+		AA00002AAAAA002AAAAA002A /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		AA00002CAAAA002CAAAA002C /* ChipSimTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipSimTests.swift; sourceTree = "<group>"; };
+		AA00002EAAAA002EAAAA002E /* ChipSimUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipSimUITests.swift; sourceTree = "<group>"; };
+		AA000030AAAA0030AAAA0030 /* ChipSimUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipSimUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8051C88E2EFA0E3300D96C56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805B218B2EFA14020069C5DF /* FirebaseDatabase in Frameworks */,
+				805B21892EFA14020069C5DF /* FirebaseCore in Frameworks */,
+				805B21872EFA14020069C5DF /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051C89F2EFA0E3900D96C56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051C8A92EFA0E3900D96C56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8051C8882EFA0E3300D96C56 = {
+			isa = PBXGroup;
+			children = (
+				8051C8932EFA0E3300D96C56 /* ChipSim */,
+				8051C8A52EFA0E3900D96C56 /* ChipSimTests */,
+				8051C8AF2EFA0E3900D96C56 /* ChipSimUITests */,
+				8051C8922EFA0E3300D96C56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8051C8922EFA0E3300D96C56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8051C8912EFA0E3300D96C56 /* ChipSim.app */,
+				8051C8A22EFA0E3900D96C56 /* ChipSimTests.xctest */,
+				8051C8AC2EFA0E3900D96C56 /* ChipSimUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8051C8932EFA0E3300D96C56 /* ChipSim */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002AAAA0002AAAA0002 /* ChipSimApp.swift */,
+				AA000032AAAA0032AAAA0032 /* ChipSim.entitlements */,
+				AA000031AAAA0031AAAA0031 /* Info.plist */,
+				AA000006AAAA0006AAAA0006 /* GoogleService-Info.plist */,
+				AA000004AAAA0004AAAA0004 /* Assets.xcassets */,
+				AA000033AAAA0033AAAA0033 /* Models */,
+				AA000034AAAA0034AAAA0034 /* Services */,
+				AA000035AAAA0035AAAA0035 /* Views */,
+			);
+			path = ChipSim;
+			sourceTree = "<group>";
+		};
+		AA000033AAAA0033AAAA0033 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA000008AAAA0008AAAA0008 /* BlackjackGame.swift */,
+				AA00000AAAAA000AAAAA000A /* Player.swift */,
+				AA00000CAAAA000CAAAA000C /* PokerGame.swift */,
+				AA00000EAAAA000EAAAA000E /* Statistics.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AA000034AAAA0034AAAA0034 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA000010AAAA0010AAAA0010 /* AudioService.swift */,
+				AA000012AAAA0012AAAA0012 /* FirebaseService.swift */,
+				AA000014AAAA0014AAAA0014 /* StorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AA000035AAAA0035AAAA0035 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA000016AAAA0016AAAA0016 /* BlackjackComponents.swift */,
+				AA000018AAAA0018AAAA0018 /* BlackjackGameView.swift */,
+				AA00001AAAAA001AAAAA001A /* BlackjackSetupView.swift */,
+				AA00001CAAAA001CAAAA001C /* ColorScheme.swift */,
+				AA00001EAAAA001EAAAA001E /* HomeView.swift */,
+				AA000020AAAA0020AAAA0020 /* PokerComponents.swift */,
+				AA000022AAAA0022AAAA0022 /* PokerGameView.swift */,
+				AA000024AAAA0024AAAA0024 /* PokerSetupView.swift */,
+				AA000026AAAA0026AAAA0026 /* SettingsView.swift */,
+				AA000028AAAA0028AAAA0028 /* SpacingConstants.swift */,
+				AA00002AAAAA002AAAAA002A /* StatisticsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8051C8A52EFA0E3900D96C56 /* ChipSimTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA00002CAAAA002CAAAA002C /* ChipSimTests.swift */,
+			);
+			path = ChipSimTests;
+			sourceTree = "<group>";
+		};
+		8051C8AF2EFA0E3900D96C56 /* ChipSimUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AA00002EAAAA002EAAAA002E /* ChipSimUITests.swift */,
+				AA000030AAAA0030AAAA0030 /* ChipSimUITestsLaunchTests.swift */,
+			);
+			path = ChipSimUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8051C8902EFA0E3300D96C56 /* ChipSim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8051C8B52EFA0E3900D96C56 /* Build configuration list for PBXNativeTarget "ChipSim" */;
+			buildPhases = (
+				8051C88D2EFA0E3300D96C56 /* Sources */,
+				8051C88E2EFA0E3300D96C56 /* Frameworks */,
+				8051C88F2EFA0E3300D96C56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChipSim;
+			packageProductDependencies = (
+				805B21862EFA14020069C5DF /* FirebaseAuth */,
+				805B21882EFA14020069C5DF /* FirebaseCore */,
+				805B218A2EFA14020069C5DF /* FirebaseDatabase */,
+			);
+			productName = ChipSim;
+			productReference = 8051C8912EFA0E3300D96C56 /* ChipSim.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8051C8A12EFA0E3900D96C56 /* ChipSimTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8051C8BA2EFA0E3900D96C56 /* Build configuration list for PBXNativeTarget "ChipSimTests" */;
+			buildPhases = (
+				8051C89E2EFA0E3900D96C56 /* Sources */,
+				8051C89F2EFA0E3900D96C56 /* Frameworks */,
+				8051C8A02EFA0E3900D96C56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8051C8A42EFA0E3900D96C56 /* PBXTargetDependency */,
+			);
+			name = ChipSimTests;
+			packageProductDependencies = (
+			);
+			productName = ChipSimTests;
+			productReference = 8051C8A22EFA0E3900D96C56 /* ChipSimTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8051C8AB2EFA0E3900D96C56 /* ChipSimUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8051C8BD2EFA0E3900D96C56 /* Build configuration list for PBXNativeTarget "ChipSimUITests" */;
+			buildPhases = (
+				8051C8A82EFA0E3900D96C56 /* Sources */,
+				8051C8A92EFA0E3900D96C56 /* Frameworks */,
+				8051C8AA2EFA0E3900D96C56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8051C8AE2EFA0E3900D96C56 /* PBXTargetDependency */,
+			);
+			name = ChipSimUITests;
+			packageProductDependencies = (
+			);
+			productName = ChipSimUITests;
+			productReference = 8051C8AC2EFA0E3900D96C56 /* ChipSimUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8051C8892EFA0E3300D96C56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					8051C8902EFA0E3300D96C56 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					8051C8A12EFA0E3900D96C56 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8051C8902EFA0E3300D96C56;
+					};
+					8051C8AB2EFA0E3900D96C56 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8051C8902EFA0E3300D96C56;
+					};
+				};
+			};
+			buildConfigurationList = 8051C88C2EFA0E3300D96C56 /* Build configuration list for PBXProject "ChipSim" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8051C8882EFA0E3300D96C56;
+			packageReferences = (
+				805B21852EFA14020069C5DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 8051C8922EFA0E3300D96C56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8051C8902EFA0E3300D96C56 /* ChipSim */,
+				8051C8A12EFA0E3900D96C56 /* ChipSimTests */,
+				8051C8AB2EFA0E3900D96C56 /* ChipSimUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8051C88F2EFA0E3300D96C56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000003AAAA0003AAAA0003 /* Assets.xcassets in Resources */,
+				AA000005AAAA0005AAAA0005 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051C8A02EFA0E3900D96C56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051C8AA2EFA0E3900D96C56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8051C88D2EFA0E3300D96C56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000001AAAA0001AAAA0001 /* ChipSimApp.swift in Sources */,
+				AA000007AAAA0007AAAA0007 /* BlackjackGame.swift in Sources */,
+				AA000009AAAA0009AAAA0009 /* Player.swift in Sources */,
+				AA00000BAAAA000BAAAA000B /* PokerGame.swift in Sources */,
+				AA00000DAAAA000DAAAA000D /* Statistics.swift in Sources */,
+				AA00000FAAAA000FAAAA000F /* AudioService.swift in Sources */,
+				AA000011AAAA0011AAAA0011 /* FirebaseService.swift in Sources */,
+				AA000013AAAA0013AAAA0013 /* StorageService.swift in Sources */,
+				AA000015AAAA0015AAAA0015 /* BlackjackComponents.swift in Sources */,
+				AA000017AAAA0017AAAA0017 /* BlackjackGameView.swift in Sources */,
+				AA000019AAAA0019AAAA0019 /* BlackjackSetupView.swift in Sources */,
+				AA00001BAAAA001BAAAA001B /* ColorScheme.swift in Sources */,
+				AA00001DAAAA001DAAAA001D /* HomeView.swift in Sources */,
+				AA00001FAAAA001FAAAA001F /* PokerComponents.swift in Sources */,
+				AA000021AAAA0021AAAA0021 /* PokerGameView.swift in Sources */,
+				AA000023AAAA0023AAAA0023 /* PokerSetupView.swift in Sources */,
+				AA000025AAAA0025AAAA0025 /* SettingsView.swift in Sources */,
+				AA000027AAAA0027AAAA0027 /* SpacingConstants.swift in Sources */,
+				AA000029AAAA0029AAAA0029 /* StatisticsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051C89E2EFA0E3900D96C56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA00002BAAAA002BAAAA002B /* ChipSimTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051C8A82EFA0E3900D96C56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA00002DAAAA002DAAAA002D /* ChipSimUITests.swift in Sources */,
+				AA00002FAAAA002FAAAA002F /* ChipSimUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8051C8A42EFA0E3900D96C56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8051C8902EFA0E3300D96C56 /* ChipSim */;
+			targetProxy = 8051C8A32EFA0E3900D96C56 /* PBXContainerItemProxy */;
+		};
+		8051C8AE2EFA0E3900D96C56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8051C8902EFA0E3300D96C56 /* ChipSim */;
+			targetProxy = 8051C8AD2EFA0E3900D96C56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8051C8B62EFA0E3900D96C56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChipSim/ChipSim.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K436XFP9QZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChipSim/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chipsimulator.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8051C8B72EFA0E3900D96C56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChipSim/ChipSim.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K436XFP9QZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChipSim/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chipsimulator.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8051C8B82EFA0E3900D96C56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K436XFP9QZ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8051C8B92EFA0E3900D96C56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K436XFP9QZ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8051C8BB2EFA0E3900D96C56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K436XFP9QZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cameronentezarian.ChipSimTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChipSim.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChipSim";
+			};
+			name = Debug;
+		};
+		8051C8BC2EFA0E3900D96C56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K436XFP9QZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cameronentezarian.ChipSimTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChipSim.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChipSim";
+			};
+			name = Release;
+		};
+		8051C8BE2EFA0E3900D96C56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K436XFP9QZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cameronentezarian.ChipSimUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChipSim;
+			};
+			name = Debug;
+		};
+		8051C8BF2EFA0E3900D96C56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K436XFP9QZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cameronentezarian.ChipSimUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChipSim;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8051C88C2EFA0E3300D96C56 /* Build configuration list for PBXProject "ChipSim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8051C8B82EFA0E3900D96C56 /* Debug */,
+				8051C8B92EFA0E3900D96C56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8051C8B52EFA0E3900D96C56 /* Build configuration list for PBXNativeTarget "ChipSim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8051C8B62EFA0E3900D96C56 /* Debug */,
+				8051C8B72EFA0E3900D96C56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8051C8BA2EFA0E3900D96C56 /* Build configuration list for PBXNativeTarget "ChipSimTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8051C8BB2EFA0E3900D96C56 /* Debug */,
+				8051C8BC2EFA0E3900D96C56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8051C8BD2EFA0E3900D96C56 /* Build configuration list for PBXNativeTarget "ChipSimUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8051C8BE2EFA0E3900D96C56 /* Debug */,
+				8051C8BF2EFA0E3900D96C56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		805B21852EFA14020069C5DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		805B21862EFA14020069C5DF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 805B21852EFA14020069C5DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		805B21882EFA14020069C5DF /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 805B21852EFA14020069C5DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		805B218A2EFA14020069C5DF /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 805B21852EFA14020069C5DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8051C8892EFA0E3300D96C56 /* Project object */;
+}
