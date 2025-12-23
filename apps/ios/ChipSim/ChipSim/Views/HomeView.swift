@@ -14,20 +14,19 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
-                ScrollView {
-                    VStack(spacing: Spacing.lg) {
-                    // Header
-                    VStack(spacing: Spacing.md) {
+                VStack(spacing: Spacing.md) {
+                    // Header - Full width at top
+                    VStack(spacing: Spacing.sm) {
                         Text("CHIP SIMULATOR")
-                            .font(.system(size: FontSize.title + 4, weight: .bold, design: .default))
+                            .font(.system(size: FontSize.title, weight: .bold, design: .default))
                             .foregroundColor(AppColors.gold)
                             .tracking(2)
                         
                         Text("Track your chips. Play with real cards.")
-                            .font(.system(size: FontSize.md))
+                            .font(.system(size: FontSize.sm))
                             .foregroundColor(.gray)
                     }
-                    .padding(Spacing.lg)
+                    .padding(Spacing.md)
                     .frame(maxWidth: .infinity)
                     .background(
                         LinearGradient(
@@ -42,10 +41,9 @@ struct HomeView: View {
                             .stroke(AppColors.gold, lineWidth: 2)
                     )
                     .shadow(color: AppColors.gold.opacity(0.2), radius: 10)
-                    .padding(.horizontal, Spacing.md)
                     
-                    // Game Selection Cards
-                    HStack(spacing: Spacing.lg) {
+                    // Game Selection Cards - Side by side
+                    HStack(spacing: Spacing.md) {
                         NavigationLink(destination: PokerSetupView()) {
                             GameCard(
                                 title: "Texas Hold'em",
@@ -53,6 +51,7 @@ struct HomeView: View {
                                 features: ["Series stats", "Burn card prompts", "Pot odds"]
                             )
                         }
+                        .frame(maxWidth: .infinity)
                         
                         NavigationLink(destination: BlackjackSetupView()) {
                             GameCard(
@@ -61,65 +60,68 @@ struct HomeView: View {
                                 features: ["Highscores", "Streak tracking", "Sound effects"]
                             )
                         }
+                        .frame(maxWidth: .infinity)
                     }
-                    .padding(.horizontal, Spacing.lg)
+                    .frame(maxHeight: .infinity)
                     
-                    // Instructions
-                    InstructionsView(selectedTab: $selectedTab)
-                        .padding(.horizontal, Spacing.lg)
-                    
-                    // Legal Disclaimer
-                    VStack(alignment: .leading, spacing: Spacing.md) {
-                        Text("For Entertainment Only")
-                            .font(.system(size: FontSize.lg, weight: .semibold))
-                            .foregroundColor(AppColors.gold)
+                    // Instructions and Legal Disclaimer - Side by side
+                    HStack(spacing: Spacing.md) {
+                        InstructionsView(selectedTab: $selectedTab)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                         
-                        Text("This app simulates casino chip tracking and does not involve real money gambling. No actual currency is wagered, won, or lost. Success in this game does not indicate future success in real money gambling.")
-                            .font(.system(size: FontSize.sm))
-                            .foregroundColor(.gray)
+                        // Legal Disclaimer
+                        VStack(alignment: .leading, spacing: Spacing.sm) {
+                            Text("For Entertainment Only")
+                                .font(.system(size: FontSize.md, weight: .semibold))
+                                .foregroundColor(AppColors.gold)
+                            
+                            ScrollView {
+                                Text("This app simulates casino chip tracking and does not involve real money gambling. No actual currency is wagered, won, or lost. Success in this game does not indicate future success in real money gambling.")
+                                    .font(.system(size: FontSize.xs))
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                        .padding(Spacing.md)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(AppColors.cardBackground)
+                        .cornerRadius(10)
                     }
-                    .padding(Spacing.lg)
-                    .background(AppColors.cardBackground)
-                    .cornerRadius(10)
-                    .padding(.horizontal, Spacing.lg)
+                    .frame(maxHeight: .infinity)
                     
-                    // Footer
+                    // Footer - Smaller buttons at bottom
                     HStack(spacing: Spacing.md) {
                         Button(action: {
                             audioService.toggleSound()
                         }) {
                             Image(systemName: audioService.soundEnabled ? "speaker.wave.2.fill" : "speaker.slash.fill")
-                                .font(.system(size: FontSize.lg))
+                                .font(.system(size: FontSize.md))
                                 .foregroundColor(AppColors.gold)
-                                .frame(width: 44, height: 44)
+                                .frame(width: 32, height: 32)
                         }
-                        
-                        Spacer()
                         
                         NavigationLink(destination: StatisticsView(pokerGame: nil, blackjackGame: nil).navigationBarTitleDisplayMode(.inline)) {
                             Image(systemName: "chart.bar")
-                                .font(.system(size: FontSize.lg))
+                                .font(.system(size: FontSize.md))
                                 .foregroundColor(AppColors.gold)
-                                .frame(width: 44, height: 44)
+                                .frame(width: 32, height: 32)
                         }
                         
                         NavigationLink(destination: SettingsView()) {
                             Image(systemName: "gearshape")
-                                .font(.system(size: FontSize.lg))
+                                .font(.system(size: FontSize.md))
                                 .foregroundColor(AppColors.gold)
-                                .frame(width: 44, height: 44)
+                                .frame(width: 32, height: 32)
                         }
+                        
+                        Spacer()
                         
                         Text("v2.1")
                             .font(.system(size: FontSize.xs))
                             .foregroundColor(.gray)
                     }
-                    .padding(.horizontal, Spacing.lg)
-                    .padding(.bottom, Spacing.lg)
-                    }
-                    .padding(.vertical, Spacing.lg)
-                    .frame(minHeight: geometry.size.height)
+                    .padding(.horizontal, Spacing.md)
                 }
+                .padding(Spacing.md)
             }
             .background(
                 LinearGradient(

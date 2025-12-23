@@ -89,17 +89,13 @@ class AudioService: ObservableObject {
     }
     
     private func playSingleChipSound() {
-        guard let engine = audioContext ?? {
-            let eng = AVAudioEngine()
-            do {
-                try eng.start()
-            } catch {
-                print("Failed to start audio engine: \(error)")
-                return nil
-            }
-            audioContext = eng
-            return eng
-        }() else { return }
+        let engine: AVAudioEngine
+        if let existingEngine = audioContext {
+            engine = existingEngine
+        } else {
+            engine = AVAudioEngine()
+            audioContext = engine
+        }
         
         let player = AVAudioPlayerNode()
         engine.attach(player)
@@ -115,6 +111,16 @@ class AudioService: ObservableObject {
         }
         
         engine.connect(player, to: engine.mainMixerNode, format: format)
+        
+        // Start engine only if not already running
+        if !engine.isRunning {
+            do {
+                try engine.start()
+            } catch {
+                print("Failed to start audio engine: \(error)")
+                return
+            }
+        }
         
         player.scheduleBuffer(buffer, at: nil)
         player.play()
@@ -140,16 +146,13 @@ class AudioService: ObservableObject {
     }
     
     private func playTone(frequency: Double, duration: Double, endFrequency: Double? = nil) {
-        guard let engine = audioContext ?? {
-            let eng = AVAudioEngine()
-            do {
-                try eng.start()
-            } catch {
-                return nil
-            }
-            audioContext = eng
-            return eng
-        }() else { return }
+        let engine: AVAudioEngine
+        if let existingEngine = audioContext {
+            engine = existingEngine
+        } else {
+            engine = AVAudioEngine()
+            audioContext = engine
+        }
         
         let player = AVAudioPlayerNode()
         engine.attach(player)
@@ -168,6 +171,17 @@ class AudioService: ObservableObject {
         }
         
         engine.connect(player, to: engine.mainMixerNode, format: format)
+        
+        // Start engine only if not already running
+        if !engine.isRunning {
+            do {
+                try engine.start()
+            } catch {
+                print("Failed to start audio engine: \(error)")
+                return
+            }
+        }
+        
         player.scheduleBuffer(buffer, at: nil)
         player.play()
         
