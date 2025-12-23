@@ -386,45 +386,45 @@ struct BettingControlsView: View {
     
     @ViewBuilder
     private var bettingControlsContent: some View {
-        VStack(spacing: isSmallScreen ? 2 : 4) {
+        VStack(spacing: isSmallScreen ? 4 : 8) {
             let player = game.players[game.activePlayerIndex]
             let toCall = max(0, game.currentBet - player.bet)
             
             Text("\(player.name)'s Turn")
-                .font(.system(size: isSmallScreen ? 10 : 12, weight: .bold))
+                .font(.system(size: isSmallScreen ? 14 : 18, weight: .bold))
                 .foregroundColor(.white)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
             
             if toCall > 0 {
                 Text("$\(toCall) to call")
-                    .font(.system(size: isSmallScreen ? 8 : 10))
+                    .font(.system(size: isSmallScreen ? 12 : 16, weight: .semibold))
                     .foregroundColor(AppColors.gold)
             } else {
                 Text("Check available")
-                    .font(.system(size: isSmallScreen ? 8 : 10))
+                    .font(.system(size: isSmallScreen ? 12 : 16, weight: .semibold))
                     .foregroundColor(.green)
             }
             
             // Primary Actions
-            HStack(spacing: isSmallScreen ? 3 : 4) {
-                Button("Fold") {
+            HStack(spacing: isSmallScreen ? 6 : 10) {
+                Button("FOLD") {
                     game.fold()
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
-                .font(.system(size: isSmallScreen ? 10 : 12, weight: .bold))
-                .frame(height: isSmallScreen ? 32 : 38)
+                .font(.system(size: isSmallScreen ? 16 : 22, weight: .bold))
+                .frame(height: isSmallScreen ? 50 : 60)
                 .frame(maxWidth: .infinity)
                 
                 if toCall > 0 {
-                    Button("Call $\(min(toCall, player.bankroll))") {
+                    Button("CALL $\(min(toCall, player.bankroll))") {
                         game.call()
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.blue)
-                    .font(.system(size: isSmallScreen ? 10 : 12, weight: .bold))
-                    .frame(height: isSmallScreen ? 32 : 38)
+                    .font(.system(size: isSmallScreen ? 16 : 22, weight: .bold))
+                    .frame(height: isSmallScreen ? 50 : 60)
                     .frame(maxWidth: .infinity)
                 } else {
                     Button("CHECK") {
@@ -432,8 +432,8 @@ struct BettingControlsView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.green)
-                    .font(.system(size: isSmallScreen ? 10 : 12, weight: .bold))
-                    .frame(height: isSmallScreen ? 32 : 38)
+                    .font(.system(size: isSmallScreen ? 16 : 22, weight: .bold))
+                    .frame(height: isSmallScreen ? 50 : 60)
                     .frame(maxWidth: .infinity)
                 }
                 
@@ -443,8 +443,8 @@ struct BettingControlsView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.orange)
-                    .font(.system(size: isSmallScreen ? 10 : 12, weight: .bold))
-                    .frame(height: isSmallScreen ? 32 : 38)
+                    .font(.system(size: isSmallScreen ? 16 : 22, weight: .bold))
+                    .frame(height: isSmallScreen ? 50 : 60)
                     .frame(maxWidth: .infinity)
                 }
             }
@@ -453,12 +453,12 @@ struct BettingControlsView: View {
             if player.bankroll > toCall {
                 let raises = game.getValidRaises()
                 if !raises.isEmpty {
-                    VStack(alignment: .leading, spacing: isSmallScreen ? 4 : 6) {
+                    VStack(alignment: .leading, spacing: isSmallScreen ? 6 : 10) {
                         Text("RAISE TO")
-                            .font(.system(size: isSmallScreen ? 12 : 16))
+                            .font(.system(size: isSmallScreen ? 16 : 20, weight: .semibold))
                             .foregroundColor(.gray)
                         
-                        HStack(spacing: isSmallScreen ? 4 : 6) {
+                        HStack(spacing: isSmallScreen ? 8 : 12) {
                             ForEach(Array(raises.prefix(6).enumerated()), id: \.offset) { index, raise in
                                 Button(action: {
                                     game.raise(to: raise.amount)
@@ -469,30 +469,30 @@ struct BettingControlsView: View {
                                                 .fill(getChipGradient(raise.chipColor))
                                                 .overlay(
                                                     Circle()
-                                                        .stroke(getChipBorderColor(raise.chipColor), lineWidth: isSmallScreen ? 2 : 3)
+                                                        .stroke(getChipBorderColor(raise.chipColor), lineWidth: isSmallScreen ? 3 : 4)
                                                 )
                                                 .overlay(
                                                     Circle()
-                                                        .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                                                        .stroke(Color.white.opacity(0.2), lineWidth: 2)
                                                         .frame(width: chipGeometry.size.width * 0.7, height: chipGeometry.size.height * 0.7)
                                                 )
                                                 .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
                                             
-                                            VStack(spacing: isSmallScreen ? 2 : 3) {
+                                            VStack(spacing: isSmallScreen ? 2 : 4) {
                                                 Text(raise.label)
-                                                    .font(.system(size: isSmallScreen ? 14 : 18, weight: .bold))
+                                                    .font(.system(size: isSmallScreen ? 16 : 22, weight: .bold))
                                                     .lineLimit(1)
-                                                    .minimumScaleFactor(0.7)
+                                                    .minimumScaleFactor(0.6)
                                                 Text("$\(raise.amount)")
-                                                    .font(.system(size: isSmallScreen ? 16 : 20, weight: .bold))
+                                                    .font(.system(size: isSmallScreen ? 18 : 24, weight: .bold))
                                                     .lineLimit(1)
-                                                    .minimumScaleFactor(0.7)
+                                                    .minimumScaleFactor(0.6)
                                             }
                                             .foregroundColor(getChipTextColor(raise.chipColor))
                                         }
                                     }
                                     .aspectRatio(1, contentMode: .fit)
-                                    .frame(minHeight: isSmallScreen ? 60 : 80)
+                                    .frame(minHeight: isSmallScreen ? 75 : 100)
                                 }
                                 .frame(maxWidth: .infinity)
                             }
@@ -501,9 +501,9 @@ struct BettingControlsView: View {
                 }
             }
         }
-        .padding(isSmallScreen ? 4 : 6)
+        .padding(isSmallScreen ? 8 : 12)
         .background(AppColors.cardBackground)
-        .cornerRadius(isSmallScreen ? 4 : 6)
+        .cornerRadius(isSmallScreen ? 6 : 10)
     }
     
     private func getChipGradient(_ chipColor: String) -> LinearGradient {
