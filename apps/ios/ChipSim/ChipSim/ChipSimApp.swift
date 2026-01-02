@@ -50,6 +50,8 @@ struct ChipSimApp: App {
             HomeView()
                 .onAppear {
                     firebaseService.initialize()
+                    // Start background music if enabled
+                    AudioService.shared.startBackgroundMusic()
                 }
         }
     }

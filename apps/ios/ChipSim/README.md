@@ -26,6 +26,13 @@ The project uses Firebase via Swift Package Manager. To add:
 Add the following audio files to the project (they live in `apps/web/`):
 - `place-your-bets-please-female-voice-28110.mp3`
 - `carddrop2-92718.mp3`
+- `casino-ambiance-19130.mp3` (for background music)
+
+**To add audio files in Xcode:**
+1. Drag the `.mp3` files from `apps/web/` into the Xcode project navigator
+2. Make sure "Copy items if needed" is checked
+3. Ensure the files are added to the ChipSim target
+4. The files should appear in the project bundle and be accessible at runtime
 
 Or update `AudioService.swift` to use different audio files.
 

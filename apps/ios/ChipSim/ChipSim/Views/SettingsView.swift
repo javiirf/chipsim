@@ -19,6 +19,33 @@ struct SettingsView: View {
                         .onChange(of: audioService.soundEnabled) { _, newValue in
                             StorageService.shared.saveSoundEnabled(newValue)
                         }
+                    
+                    Toggle("Background Music", isOn: $audioService.musicEnabled)
+                    
+                    if audioService.musicEnabled {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Music Volume")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                            
+                            HStack {
+                                Image(systemName: "speaker.fill")
+                                    .foregroundColor(.secondary)
+                                    .font(.caption)
+                                
+                                Slider(value: $audioService.musicVolume, in: 0...1)
+                                
+                                Image(systemName: "speaker.wave.3.fill")
+                                    .foregroundColor(.secondary)
+                                    .font(.caption)
+                            }
+                            
+                            Text("\(Int(audioService.musicVolume * 100))%")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.vertical, 4)
+                    }
                 }
                 
                 Section("Data") {

@@ -49,6 +49,9 @@ struct BlackjackGameView: View {
             )
             .navigationTitle("Blackjack")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                AudioService.shared.startBackgroundMusic()
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Home") {

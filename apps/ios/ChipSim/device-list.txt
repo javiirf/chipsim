@@ -1,0 +1,3 @@
+Device Name	Device ID (UDID)	Platform
+Cameron's iPhone	00008140-000D34AC1EE3801C	iOS
+Javi's iPhone		00008110-001428990232801E	iOS

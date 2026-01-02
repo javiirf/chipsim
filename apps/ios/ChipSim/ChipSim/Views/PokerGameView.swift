@@ -223,6 +223,7 @@ struct PokerGameView: View {
         .onAppear {
             AppDelegate.orientationLock = .landscape
             UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+            AudioService.shared.startBackgroundMusic()
         }
         .onDisappear {
             AppDelegate.orientationLock = .all
@@ -406,7 +407,7 @@ struct BettingControlsView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
-                .font(.system(size: isSmallScreen ? 32 : 48, weight: .bold))
+                .font(.system(size: isSmallScreen ? 44 : 64, weight: .bold))
                 .frame(maxWidth: .infinity)
                 .frame(maxHeight: .infinity)
                 
@@ -416,7 +417,7 @@ struct BettingControlsView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.blue)
-                    .font(.system(size: isSmallScreen ? 32 : 48, weight: .bold))
+                    .font(.system(size: isSmallScreen ? 44 : 64, weight: .bold))
                     .frame(maxWidth: .infinity)
                     .frame(maxHeight: .infinity)
                 } else {
@@ -425,7 +426,7 @@ struct BettingControlsView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.green)
-                    .font(.system(size: isSmallScreen ? 32 : 48, weight: .bold))
+                    .font(.system(size: isSmallScreen ? 44 : 64, weight: .bold))
                     .frame(maxWidth: .infinity)
                     .frame(maxHeight: .infinity)
                 }
@@ -436,7 +437,7 @@ struct BettingControlsView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.orange)
-                    .font(.system(size: isSmallScreen ? 32 : 48, weight: .bold))
+                    .font(.system(size: isSmallScreen ? 44 : 64, weight: .bold))
                     .frame(maxWidth: .infinity)
                     .frame(maxHeight: .infinity)
                 }
